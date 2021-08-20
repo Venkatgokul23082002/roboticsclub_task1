@@ -8,4 +8,4 @@ NOTE:
 1.The code are pasted in task1.py in the given space below
 ##############	ADD YOUR CODE HERE	##############
 in the respective functions
-2.In generateGradeCard function for working of code in google colab the dict name_mark_mapping has been entered
+'\n'2.In generateGradeCard function for working of code in google colab the dict name_mark_mapping has been entered
