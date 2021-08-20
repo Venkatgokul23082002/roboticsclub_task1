@@ -12,4 +12,4 @@ NOTE:
 in the respective functions
 
 
-2.In generateGradeCard function for working of code in google colab the dict name_mark_mapping has been entered
+2.In generateGradeCard function for working of code in google colab the dict name_marks_mapping has been entered
