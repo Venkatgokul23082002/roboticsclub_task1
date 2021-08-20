@@ -31,7 +31,16 @@ def readMarkSheet(file_name):
 	input_file_obj = open(file_name, 'r')
 
 	##############	ADD YOUR CODE HERE	##############
-	
+	import csv
+        import pprint
+        name_marks_mapping={}
+        strg='marks'
+        with open('task1_sample.csv', mode='r') as inp:
+           reader = csv.reader(inp)
+        name_marks_mapping = {rows[0]:{strg:[rows[1],rows[2],rows[3],rows[4],rows[5]]} for rows in reader}
+        del(name_marks_mapping['name'])
+
+        pprint.pprint(name_marks_mapping)
 	
 
 	##################################################
@@ -81,7 +90,47 @@ def generateGradeCard(mapping_dict):
 	grade_card = {}
 
 	##############	ADD YOUR CODE HERE	##############
-	
+import csv
+grade_card={}
+name_marks_mapping={'Adolphus Biernat': {'marks': ['91', '96', '98', '94', '100']},
+ 'Artus Syne': {'marks': ['43', '71', '55', '16', '51']},
+ 'Evey Reburn': {'marks': ['49', '7', '53', '50', '63']},
+ 'Garrot Casetta': {'marks': ['22', '3', '91', '75', '52']},
+ 'Giff Wickmann': {'marks': ['63', '37', '21', '87', '9']},
+ 'Jaye Etock': {'marks': ['92', '9', '2', '78', '55']},
+ 'Rex Aspinell': {'marks': ['34', '75', '51', '38', '99']},
+ 'Roselle Maes': {'marks': ['71', '90', '96', '79', '48']},
+ 'Thomasina Tinkham': {'marks': ['25', '78', '46', '46', '90']},
+ 'Torin Ziehms': {'marks': ['71', '31', '83', '1', '25']}}
+keys=list(name_marks_mapping.keys())
+output=list(name_marks_mapping.values())
+n=len(name_marks_mapping)
+sum=0
+for i in range(0,n):
+ for j in range(0,5):
+  if j<4:
+   sum=sum+int(output[i]["marks"][j])
+  else:
+   sum=sum+int(output[i]["marks"][j])
+   avg=sum/5
+   if avg>=90:
+     grade='O'
+   elif avg>=70:
+     grade='A'
+   elif avg>=60:
+     grade='B'
+   elif avg>=50:
+     grade='C'
+   elif avg>=40:
+     grade='D'
+   else:
+     grade='FAIL'
+   grade_card[keys[i]]={'subject_wise_marks':output[i]["marks"],'grade_recieved':grade}
+   sum=0
+print('{')  
+for key, value in grade_card.items():
+    print(key, ' : ', value)
+print('}')
 	
 
 	##################################################
